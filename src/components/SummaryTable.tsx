@@ -6,7 +6,7 @@ const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
 const summaryDates = generateDatesFromYearBeginning()
 
 const minimumSummaryDatesSize = 18 * 7 // 18 weeks
-const amountofDaysToFill = minimumSummaryDatesSize - summaryDates.length
+const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length
 
 export function SummaryTable() {
   return (
@@ -25,11 +25,17 @@ export function SummaryTable() {
       </div>
 
       <div className="grid grid-rows-7 grid-flow-col gap-3">
-        {summaryDates.map(date => {
-          return <HabitDay key={date.toString()} />
+        {summaryDates.map((date) => {
+          return (
+            <HabitDay 
+              key={date.toString()} 
+              amount={5} 
+              completed={Math.round(Math.random() * 5)} 
+            />
+          )
         })}
-        
-        {amountofDaysToFill > 0 && Array.from({ length: amountofDaysToFill }).map((_, i) => {
+
+        {amountOfDaysToFill > 0 && Array.from({ length: amountOfDaysToFill }).map((_, i) => {
           return (
             <div
               key={i}
