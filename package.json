@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+		"lint": "eslint src --ext .ts",
+		"lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.1",
